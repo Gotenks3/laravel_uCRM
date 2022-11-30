@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PurchaseController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,6 +13,10 @@ Route::resource('/items', ItemController::class)->middleware(['auth', 'verified'
 
 // 顧客情報
 Route::resource('/customers', CustomerController::class)->middleware(['auth', 'verified']);
+
+// 購入情報
+Route::resource('/purchases', PurchaseController::class)->middleware(['auth', 'verified']);
+
 
 
 Route::get('/', function () {
